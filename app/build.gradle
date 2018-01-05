@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+
+    defaultConfig {
+        applicationId "com.example.pny.sso_auth"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+configurations.all {
+    resolutionStrategy.force 'com.android.support:support-annotations:26.1.0'
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:26.0.0'
+    testCompile 'junit:junit:4.12'
+
+    // Firebase Authentication
+    compile 'com.google.firebase:firebase-auth:11.8.0'
+
+    // Firebase UI
+    // Used in FirebaseUIActivity. The FirebaseUI-Android library has a minSdk level of 16
+    // so this library is only included in the minSdkJellybean variant.
+    compile 'com.firebaseui:firebase-ui-auth:3.1.0'
+
+    // Google Sign In SDK (only required for Google Sign In)
+    compile 'com.google.android.gms:play-services-auth:11.8.0'
+
+    compile('com.facebook.android:facebook-android-sdk:4.27.0')
+}
+
+apply plugin: 'com.google.gms.google-services'

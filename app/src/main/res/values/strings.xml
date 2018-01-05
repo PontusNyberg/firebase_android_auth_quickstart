@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SSO_Auth</string>
+
+    <!-- Facebook application ID and custom URL scheme (app ID prefixed by 'fb'). -->
+    <string name="facebook_application_id" translatable="false">__FACEBOOK_APP_ID__</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb__FACEBOOK_APP_ID__</string>
+</resources>
